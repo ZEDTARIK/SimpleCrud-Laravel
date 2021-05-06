@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Http\Request;
+use NunoMaduro\Collision\Adapters\Phpunit\Style;
 
 class StudentController extends Controller
 {
@@ -43,12 +44,14 @@ class StudentController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Student  $student
+     * @param  \App\Models\Student  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Student $student)
+    public function show($id)
     {
-        //
+        $student = Student::findOrFail($id);
+        //dd($student);
+        return view('Studente.show', ['student' => $student]);
     }
 
     /**

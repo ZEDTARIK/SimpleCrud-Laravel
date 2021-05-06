@@ -13,6 +13,7 @@
                         <th>Student</th>
                         <th>Email</th>
                         <th>Address</th>
+                        <th></th>
                     </thead>
                     @foreach($students as $student)
                     <tbody>
@@ -21,6 +22,9 @@
                             <td scope="row">{{ $student->FirstName}} {{ $student->LastName}}</td>
                             <td>{{ $student->Email}}</td>
                             <td>{{ $student->Address}}</td>
+                            <td>
+                                <a href="{{'/student/'.$student->id }}" class="btn btn-sm btn-primary">Show</a>
+                            </td>
                         </tr>
                     </tbody>
                     @endforeach

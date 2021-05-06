@@ -23,4 +23,4 @@ Route::get('/', function () {
 | Web Routes For Student
 |--------------------------------------------------------------------------
 */
-Route::Resource('/student/index', StudentController::class)->only('index');
+Route::Resource('/student', StudentController::class)->only(['index', 'show']);
