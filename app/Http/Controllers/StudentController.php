@@ -14,7 +14,9 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        $students = Student::cursor();
+        //dd($students);
+        return view('Studente.index', ['students' => $students ]);
     }
 
     /**

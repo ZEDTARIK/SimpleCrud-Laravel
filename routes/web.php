@@ -18,4 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/student/create', [StudentController::class, 'create']);
+/*
+|--------------------------------------------------------------------------
+| Web Routes For Student
+|--------------------------------------------------------------------------
+*/
+Route::Resource('/student/index', StudentController::class)->only('index');
